@@ -460,6 +460,10 @@ body:before{background:var(--tex) 0 0/var(--texsz) var(--texsz) repeat!important
 .day small{line-height:1.25;text-align:center;display:flex;flex-direction:column;align-items:center}
 .day small span{white-space:nowrap;letter-spacing:-.01em}
 @media (max-width:400px){.day small{font-size:8.6px!important}.days{gap:5px!important}}
+/* Holly 24.11: Kopfleiste ganz deckend (Text schien durch), Harfe deckt keine Sortennamen */
+.hdr.solid{background:#FBF5E8!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+.stop span{top:40px}
+@media (max-width:700px){.stop span{top:39px}.stop:nth-child(odd) span{top:-42px}.scale .ends{margin-bottom:44px}.track{margin-bottom:14px}}
 /* HEUTE-Marke über dem Rand, nie über dem Tagesnamen (Реестр 24.11) */
 .day .dn{font:inherit;line-height:1.1}
 .day .today{top:-12px;line-height:1.15;padding:2px 7px;box-shadow:0 0 0 2px var(--milk)}

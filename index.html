@@ -9,8 +9,8 @@
 <meta name="description" content="Chäsi Lindenrain, Mosnang – Käse aus der eigenen Käserei. Musterentwurf, Angaben fiktiv.">
 <meta property="og:title" content="Chäsi Lindenrain · Mosnang">
 <meta property="og:description" content="Käse aus der eigenen Käserei. Musterentwurf mit fiktiven Angaben.">
-<meta property="og:image" content="img/og.jpg">
-<link rel="icon" href="img/favicon.png">
+<meta property="og:image" content="img/fake_og.jpg">
+<link rel="icon" href="img/fake_favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Sofia+Sans:wght@400;500;600;700;800&family=Pirata+One&display=swap" rel="stylesheet">
@@ -361,7 +361,7 @@ footer a{text-decoration:none}
 
 /* ===== Hell & warm (Юля 24.11): Grund = Putz von ihrer Fassade, Keller nur als Akzent-Block ===== */
 body{background:var(--milk)}
-body:before{content:"";position:fixed;inset:0;z-index:-1;background:url(img/putz.webp) 0 0/320px 300px repeat;opacity:.38;pointer-events:none}
+body:before{content:"";position:fixed;inset:0;z-index:-1;background:none;pointer-events:none}
 .laden,.preise,.fondue,.familie,.stimmen{background:transparent}
 .familie{color:var(--ink)}
 .familie .kick{color:var(--red)}
@@ -421,7 +421,7 @@ body:before{content:"";position:fixed;inset:0;z-index:-1;background:url(img/putz
 .weg.noimg{background:transparent;color:var(--ink);min-height:0;padding-top:40px}.weg.noimg:after{display:none}.weg.noimg p{color:var(--mute)}.weg.noimg .btn-line{color:var(--ink)}.weg.noimg .kick{color:var(--red)!important}
 
 /* ===== Runde 5 (Юля): Käsetextur, Karte, Tag, Blasen, Keller sichtbarer ===== */
-body:before{background:url(img/kaesetextur.webp) 0 0/720px 380px repeat;opacity:.15}
+body:before{background:url(img/fake_kaesetextur.webp) 0 0/720px 380px repeat;opacity:.15}
 .tag:empty{display:none}
 .fig .bub{margin-bottom:20px}
 .kbg:after{background:linear-gradient(180deg,rgba(251,245,232,.22),rgba(251,245,232,.12) 50%,rgba(251,245,232,.22)),linear-gradient(90deg,rgba(251,245,232,.86) 0%,rgba(251,245,232,.6) 34%,rgba(251,245,232,.1) 58%,rgba(251,245,232,.18) 100%)!important}
@@ -446,11 +446,12 @@ body:before{background:url(img/kaesetextur.webp) 0 0/720px 380px repeat;opacity:
 .pot .potimg{box-shadow:0 12px 26px rgba(74,46,22,.22)!important}
 
 /* Regel 18j: Übergänge ohne Farbsprung – gleiche Käsetextur wie body:before */
-.hero-bar{background:linear-gradient(rgba(251,245,232,.85),rgba(251,245,232,.85)),url(img/kaesetextur.webp) 0 0/720px 380px fixed,var(--milk)!important;backdrop-filter:none;-webkit-backdrop-filter:none}
-.weg:before{content:"";position:absolute;left:0;right:0;top:0;height:34%;z-index:1;pointer-events:none;background:linear-gradient(rgba(251,245,232,.85),rgba(251,245,232,.85)),url(img/kaesetextur.webp) 0 0/720px 380px fixed,var(--milk);-webkit-mask-image:linear-gradient(180deg,#000 0,#000 18%,transparent 100%);mask-image:linear-gradient(180deg,#000 0,#000 18%,transparent 100%)}
+.hero-bar{background:linear-gradient(rgba(251,245,232,.85),rgba(251,245,232,.85)),url(img/fake_kaesetextur.webp) 0 0/720px 380px fixed,var(--milk)!important;backdrop-filter:none;-webkit-backdrop-filter:none}
+.weg:before{content:"";position:absolute;left:0;right:0;top:0;height:34%;z-index:1;pointer-events:none;background:linear-gradient(rgba(251,245,232,.85),rgba(251,245,232,.85)),url(img/fake_kaesetextur.webp) 0 0/720px 380px fixed,var(--milk);-webkit-mask-image:linear-gradient(180deg,#000 0,#000 18%,transparent 100%);mask-image:linear-gradient(180deg,#000 0,#000 18%,transparent 100%)}
 .weg:after{background:linear-gradient(180deg,rgba(20,16,11,0) 40%,rgba(20,16,11,.8) 100%)!important}
 .hero h1{font-size:clamp(40px,4.2vw,66px)}
 .hero-in .wrap>*{max-width:560px}
+.kpic.noimg{display:none}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv,.h-line{opacity:1;transform:none}}
 </style>
 </head>
@@ -468,7 +469,7 @@ body:before{background:url(img/kaesetextur.webp) 0 0/720px 380px repeat;opacity:
 <main id="top">
 <!-- HERO: Bänkli vor der Käserei -->
 <section class="hero" id="hero">
-  <div class="ph"><picture><source media="(max-aspect-ratio:3/4)" srcset="img/keller_anschnitt_m.webp"><img src="img/keller_anschnitt_l.webp" alt="Angeschnittener Käselaib im Keller"></picture></div>
+  <div class="ph"><picture><source media="(max-aspect-ratio:3/4)" srcset="img/fake_keller_anschnitt_m.webp"><img src="img/fake_keller_anschnitt_l.webp" alt="Angeschnittener Käselaib im Keller"></picture></div>
   <div class="shade"></div>
   <div class="hero-in"><div class="wrap">
     <span class="kick h-line">Käserei seit 1998 · Toggenburg</span>
@@ -500,7 +501,7 @@ body:before{background:url(img/kaesetextur.webp) 0 0/720px 380px repeat;opacity:
   <div class="wrap">
     <div class="head rv">
       <div><span class="kick">Unsere Käse</span><h2>Wie kräftig darf’s sein?</h2></div>
-      <p>8 Käse machen wir das ganze Jahr, dazu saisonale Spezialitäten. Ziehen Sie die Käseharfe – von jung &amp; mild bis extra reif.</p>
+      <p>6 Käse machen wir das ganze Jahr, dazu saisonale Spezialitäten. Ziehen Sie die Käseharfe – von jung &amp; mild bis extra reif.</p>
     </div>
     <div class="stage rv">
       <div class="kpic" id="kpic" role="button" tabindex="0" aria-label="Foto gross anzeigen"></div>
@@ -525,7 +526,7 @@ body:before{background:url(img/kaesetextur.webp) 0 0/720px 380px repeat;opacity:
 <!-- FONDUE -->
 <section class="fondue sec" id="fondue">
   <div class="wrap fgrid">
-    <div class="pot rv" id="pot"><div class="potimg" role="button" tabindex="0" aria-label="Foto gross anzeigen" style="cursor:zoom-in"><img id="pimgF" class="on" src="img/fondue_1x1.webp" alt="Fondue im Caquelon"><img id="pimgR" src="img/raclette_1x1.webp" alt="Raclette"></div></div>
+    <div class="pot rv" id="pot"><div class="potimg" role="button" tabindex="0" aria-label="Foto gross anzeigen" style="cursor:zoom-in"><img id="pimgF" class="on" src="img/fake_fondue_1x1.webp" alt="Fondue im Caquelon"><img id="pimgR" src="img/fake_raclette_1x1.webp" alt="Raclette"></div></div>
     <div class="calc rv">
       <span class="kick">Hausgemachte Mischung</span>
       <h2>Wie viel Käse für Ihre Runde?</h2>
@@ -539,7 +540,7 @@ body:before{background:url(img/kaesetextur.webp) 0 0/720px 380px repeat;opacity:
 <!-- FAMILIE -->
 <section class="familie sec fade-top" id="familie">
   <div class="wrap famgrid">
-    <div class="famimg rv" data-lb="img/kaeser_haende_l.webp"><img src="img/kaeser_haende_m.webp" alt="Hände des Käsers wenden einen jungen Käselaib"></div>
+    <div class="famimg rv" data-lb="img/fake_kaeser_haende_l.webp"><img src="img/fake_kaeser_haende_m.webp" alt="Hände des Käsers wenden einen jungen Käselaib"></div>
     <div class="rv">
       <span class="kick">Familie Lindner</span>
       <h2>In langer Familientradition</h2>
@@ -548,7 +549,7 @@ body:before{background:url(img/kaesetextur.webp) 0 0/720px 380px repeat;opacity:
         <div class="plank"><span class="yr">1998</span><p><b>Frühling:</b> Familie Lindner übernimmt die Dorfkäserei am Lindenrain.</p></div>
         <div class="plank"><span class="yr">2019</span><p><b>Gold</b> für den Bergkäse. Im Herbst öffnet das Lädeli direkt in der Käserei.</p></div>
         <div class="plank"><span class="yr">2022</span><p><b>Bronze</b> für das Kräuter-Mutschli.</p></div>
-        <div class="plank"><span class="yr">Heute</span><p><b>8 Käsespezialitäten</b> und saisonale Sorten – alle aus der eigenen Käserei.</p></div>
+        <div class="plank"><span class="yr">Heute</span><p><b>6 Käsespezialitäten</b> und saisonale Sorten – alle aus der eigenen Käserei.</p></div>
       </div>
     </div>
   </div>
@@ -599,7 +600,7 @@ body:before{background:url(img/kaesetextur.webp) 0 0/720px 380px repeat;opacity:
 
 <!-- WEG -->
 <section class="weg" id="weg">
-  <picture><source media="(max-aspect-ratio:3/4)" srcset="img/huegel_m.webp"><img src="img/huegel_l.webp" alt="Toggenburger Hügel am Morgen"></picture>
+  <picture><source media="(max-aspect-ratio:3/4)" srcset="img/fake_huegel_m.webp"><img src="img/fake_huegel_l.webp" alt="Toggenburger Hügel am Morgen"></picture>
   <div class="wrap">
     <span class="kick" style="color:var(--gold2)">Mitten im Toggenburg</span>
     <h2>Kommen Sie vorbei – probieren ist erlaubt</h2>
@@ -678,18 +679,18 @@ const io=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.ta
   if(e.target.hasAttribute('data-swing')){ const t=e.target; setTimeout(()=>{t.classList.add('swing'); setTimeout(()=>{t.classList.remove('swing'); t.classList.add('ok');},1650);},500);} } }),{threshold:.18});
 QA('.rv').forEach(e=>io.observe(e));
 
-/* --- Käse / Reife-Regler (Texte von kaeserei-kreuzstrasse.ch, Archiv 2025) --- */
+/* --- Käse / Reife-Regler --- */
 const K=[
  {n:'Lindenrain-Mutschli',s:'Klein, rund und jung – unser Liebling für jeden Tag',t:'jung, mild und schmelzend',tag:'',img:'mutschli_kraeuter',
-  herbs:[['Nature','Einfach Milch, Lab und Zeit.'],['Basilikum','Kombiniert mit dem Aroma des Basilikums, der einen sehr eigenwilligen pfeffrig-süssen Geschmack mit einem Hauch Gewürznelken aufweist.'],['Thymian','Kombiniert mit dem Geschmack des Thymians, der stark würzig riecht und herb-aromatisch schmeckt, mit einer milden, pfeffrigen Schärfe.'],['Bärlauch','Vereint mit dem Geschmack des Bärlauchs, dessen ätherisches Öl das charakteristische knoblauchähnliche Aroma entfaltet.'],['Orangenblüten','Kombiniert mit dem zartblumigen Geschmack der Orangenblüte und einer leichten Zitrusnote.']]},
+  herbs:[['Nature','Einfach Milch, Lab und Zeit.'],['Schnittlauch','Frisch gehackter Schnittlauch – grün, leicht zwiebelig, ideal aufs Brot.'],['Paprika','Mildes Paprikapulver gibt Farbe und eine sanft rauchige Note.'],['Chili','Für Mutige: ein Hauch Chili, warm im Abgang.']]},
  {n:'Rahmkäse Alte Mühle',s:'Vollfett, mit Rahm verfeinert',t:'cremig und mild, mit feiner Butternote',tag:'Rahmkäse',img:'magdenauer'},
  {n:'Roter Pfeffer Käse',s:'Mit ganzen roten Pfefferbeeren',t:'halbhart, mild – mit blumig-scharfen Pfefferbeeren',tag:'mit rotem Pfeffer',img:'roter_pfeffer'},
  {n:'Bergkäse würzig',s:'6 Monate im eigenen Keller',t:'kräftig, nussig, mit kleinen Salzkristallen',tag:'★ Gold 2019',img:'appenzeller_stueck'},
  {n:'Dunkler Fuchs',s:'Extra reif, über ein Jahr gelagert',t:'tief, würzig und leicht süsslich, zergeht auf der Zunge',tag:'extra reif',img:'schwarzer_wolf'}
 ];
 const kpic=Q('#kpic'), stops=Q('#stops'), harp=Q('#harp'), track=Q('#track'); let cur=-1, herbI=0;
-K.forEach((k,i)=>{ const im=document.createElement('img'); im.src='img/'+k.img+'_k.webp'; im.alt=k.n; im.loading='lazy'; im.addEventListener('error',()=>{im.style.visibility='hidden'}); kpic.appendChild(im);
-  const s=document.createElement('button'); s.className='stop'; s.setAttribute('aria-label',k.n); s.innerHTML='<span>'+k.n.replace('Lindenrain-','').replace(' Klosterkäse','').replace(' Käse','')+'</span>'; s.addEventListener('click',e=>{e.stopPropagation(); go(i,true);}); stops.appendChild(s); });
+K.forEach((k,i)=>{ const im=document.createElement('img'); im.src='img/fake_'+k.img+'_k.webp'; im.alt=k.n; im.loading='lazy'; im.addEventListener('error',()=>{im.style.visibility='hidden'; kpic.classList.add('noimg')}); kpic.appendChild(im);
+  const s=document.createElement('button'); s.className='stop'; s.setAttribute('aria-label',k.n); s.innerHTML='<span>'+k.n.replace('Lindenrain-','').replace(' Käse','')+'</span>'; s.addEventListener('click',e=>{e.stopPropagation(); go(i,true);}); stops.appendChild(s); });
 const pos=i=>{ const r=track.getBoundingClientRect(); const pad=11; return pad+(r.width-2*pad)*i/(K.length-1); };
 function show(i){ if(i===cur) return; cur=i; const k=K[i];
   QA('#kpic > img').forEach((im,j)=>im.classList.toggle('on',j===i)); QA('.stop').forEach((s,j)=>s.classList.toggle('on',j===i));
@@ -708,7 +709,7 @@ track.addEventListener('click',e=>{ if(e.target===track||e.target.classList.cont
 harp.addEventListener('keydown',e=>{ if(e.key==='ArrowRight'){go(cur+1,true);e.preventDefault();} if(e.key==='ArrowLeft'){go(cur-1,true);e.preventDefault();} });
 go(0); addEventListener('resize',()=>go(cur));
 
-kpic.addEventListener('click',()=>openLb('img/'+K[cur].img+'_l.webp'));
+kpic.addEventListener('click',()=>openLb('img/fake_'+K[cur].img+'_l.webp'));
 
 /* --- Fondue-Rechner --- */
 const pot=Q('#pot'); const FC=['#3c6e9e','#b5272d','#5b7a35','#e3a72f','#7a4e25','#8a5aa8','#2f8f86','#d06a2c','#455a64','#c2185b','#6d8b2f','#1f6fb2'];
@@ -721,7 +722,7 @@ function calc(){ Q('#gnum').textContent=n; QA('.fork').forEach((f,i)=>f.classLis
   Q('#gtxt').textContent= mode==='f' ? 'Pro Person rechnet man mit rund 200 g Käse. Unsere hausgemachte Fondue-Mischung gibt es im Laden.' : 'Für Raclette rechnet man mit 200 bis 250 g Käse pro Person. Für grössere Runden am besten vorher anrufen: 071 000 00 00.'; }
 Q('#plus').addEventListener('click',()=>{n=Math.min(12,n+1);calc();}); Q('#minus').addEventListener('click',()=>{n=Math.max(1,n-1);calc();});
 QA('.mode button').forEach(b=>b.addEventListener('click',()=>{ mode=b.dataset.m; QA('.mode button').forEach(x=>x.classList.toggle('on',x===b)); Q('#pimgF').classList.toggle('on',mode==='f'); Q('#pimgR').classList.toggle('on',mode==='r'); calc(); }));
-Q('.potimg').addEventListener('click',()=>openLb(mode==='f'?'img/fondue_1x1.webp':'img/raclette_1x1.webp'));
+Q('.potimg').addEventListener('click',()=>openLb(mode==='f'?'img/fake_fondue_1x1.webp':'img/fake_raclette_1x1.webp'));
 calc();
 
 /* --- Stimmen: Leiste (eine Karte pro Schritt) --- */

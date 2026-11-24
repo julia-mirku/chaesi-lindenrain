@@ -222,7 +222,7 @@ section{position:relative}
 .fgrid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(26px,4vw,60px);align-items:center}
 .pot{position:relative;aspect-ratio:1;border-radius:50%;max-width:min(520px,66vh);width:100%;margin:0 auto}
 .pot .potimg{position:absolute;inset:9%;border-radius:50%;overflow:hidden;box-shadow:0 30px 60px rgba(74,46,22,.35)}
-.pot .potimg img{width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .5s}
+.pot .potimg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .5s}
 .pot .potimg img.on{opacity:1}
 .fork{position:absolute;left:50%;top:50%;width:6px;height:46%;margin-left:-3px;transform-origin:50% 0;pointer-events:none}
 .fork i{position:absolute;left:0;right:0;top:63%;bottom:0;border-radius:3px;background:linear-gradient(90deg,#7b5a3a,#b98a5b,#7b5a3a);transform:translateY(40px);opacity:0;transition:transform .45s cubic-bezier(.3,1.4,.5,1),opacity .3s}
@@ -487,7 +487,7 @@ body:before{background-size:450px 450px}
     <span class="kick h-line">Käserei seit 1998 · Toggenburg</span>
     <h1 class="h-line d1">Käse aus dem Toggenburg, <em>frisch vom Keller</em></h1>
     <p class="lead h-line d2">Familie Lindner macht ihren Käse selbst – vom würzigen Bergkäse bis zur hausgemachten Fondue-Mischung.</p>
-    <div class="ctas h-line d3"><a class="btn btn-gold" href="#kaese">Unsere Käse</a><a class="btn btn-line" href="#laden">Öffnungszeiten &amp; Weg</a></div>
+    <div class="ctas h-line d3"><a class="btn btn-gold" href="#kaese">Unsere Käse</a><a class="btn btn-line" href="#laden">Zeiten &amp; Anfahrt</a></div>
   </div></div>
   <div class="hero-bar"><div class="wrap">
     <span class="js-status"><span class="dot"></span>…</span>
@@ -500,7 +500,7 @@ body:before{background-size:450px 450px}
 <!-- MEDAILLEN über dem Käsekeller -->
 <section class="preise" id="preise">
   <div class="wrap pgrid">
-    <div class="ptxt rv"><span class="kick">Ausgezeichnet</span><h2>Gold und Bronze für unseren Käse</h2><p>Gemacht in unserer Käserei am Lindenrain – und gereift im eigenen Keller, Laib für Laib.</p></div>
+    <div class="ptxt rv"><span class="kick">Prämiert</span><h2>Zweimal ausgezeichnet</h2><p>Jeder Laib entsteht bei uns im Dorf und reift in Ruhe auf Holzbrettern im Keller.</p></div>
     <div class="medals">
       <div class="medal rv" data-swing><div class="disc g"><div class="in"><small>Gold</small><b>2019</b><small>Bergkäse</small></div></div><h3>Regionaler Käsepreis</h3><p>Goldmedaille für unseren Bergkäse</p></div>
       <div class="medal rv" data-swing><div class="disc b"><div class="in"><small>Bronze</small><b>2022</b><small>Mutschli</small></div></div><h3>Käse-Olympiade</h3><p>Bronzemedaille für das Kräuter-Mutschli</p></div>
@@ -512,8 +512,8 @@ body:before{background-size:450px 450px}
 <section class="kaese sec fade-top" id="kaese">
   <div class="wrap">
     <div class="head rv">
-      <div><span class="kick">Unsere Käse</span><h2>Wie kräftig darf’s sein?</h2></div>
-      <p>6 Käse machen wir das ganze Jahr, dazu saisonale Spezialitäten. Ziehen Sie die Käseharfe – von jung &amp; mild bis extra reif.</p>
+      <div><span class="kick">Sortiment</span><h2>Von mild bis rassig</h2></div>
+      <p>Sechs Sorten aus eigener Herstellung. Schieben Sie den Regler und finden Sie Ihren Lieblingskäse.</p>
     </div>
     <div class="stage rv">
       <div class="kpic" id="kpic" role="button" tabindex="0" aria-label="Foto gross anzeigen"></div>
@@ -527,7 +527,7 @@ body:before{background-size:450px 450px}
       </div>
     </div>
     <div class="scale rv">
-      <div class="ends"><span>jung &amp; mild</span><span>extra reif</span></div>
+      <div class="ends"><span>sanft</span><span>rassig</span></div>
       <div class="track" id="track"><div class="bar"></div><div class="stops" id="stops"></div>
         <div class="harp" id="harp" role="slider" tabindex="0" aria-label="Reife wählen" aria-valuemin="1" aria-valuemax="5" aria-valuenow="1"><svg viewBox="0 0 32 32" fill="none" stroke="#2a1a08" stroke-width="2.2" stroke-linecap="round"><path d="M7 5v22M25 5v22M7 5h18M7 27h18"/><path d="M12 5v22M16 5v22M20 5v22" stroke-width="1.2"/></svg></div>
       </div>
@@ -538,10 +538,10 @@ body:before{background-size:450px 450px}
 <!-- FONDUE -->
 <section class="fondue sec" id="fondue">
   <div class="wrap fgrid">
-    <div class="pot rv" id="pot"><div class="potimg" role="button" tabindex="0" aria-label="Foto gross anzeigen" style="cursor:zoom-in"><img id="pimgF" class="on" src="img/fake_fondue_1x1.webp" alt="Fondue im Caquelon"><img id="pimgR" src="img/fake_raclette_1x1.webp" alt="Raclette"></div></div>
+    <div class="pot rv" id="pot"><div class="potimg" role="button" tabindex="0" aria-label="Foto gross anzeigen" style="cursor:zoom-in"><img id="pimgF" class="on" src="img/fake_fondue_1x1.webp" alt="Fondue mit Brotwürfeln"><img id="pimgR" src="img/fake_raclette_1x1.webp" alt="Raclette"></div></div>
     <div class="calc rv">
-      <span class="kick">Hausgemachte Mischung</span>
-      <h2>Wie viel Käse für Ihre Runde?</h2>
+      <span class="kick">Für gemütliche Abende</span>
+      <h2>Fondue oder Raclette – wie viel braucht es?</h2>
       <div class="mode" role="tablist"><button class="on" data-m="f" role="tab">Fondue</button><button data-m="r" role="tab">Raclette</button></div>
       <div class="guests"><button id="minus" aria-label="Eine Person weniger">−</button><span class="gnum" id="gnum">4</span><button id="plus" aria-label="Eine Person mehr">+</button><span class="gl">Personen<br>am Tisch</span></div>
       <div class="result"><div class="g" id="gres">800 <small>g</small></div><p id="gtxt"></p></div>
@@ -552,16 +552,16 @@ body:before{background-size:450px 450px}
 <!-- FAMILIE -->
 <section class="familie sec fade-top" id="familie">
   <div class="wrap famgrid">
-    <div class="famimg rv" data-lb="img/fake_kaeser_haende_l.webp"><img src="img/fake_kaeser_haende_m.webp" alt="Hände des Käsers wenden einen jungen Käselaib"></div>
+    <div class="famimg rv" data-lb="img/fake_kaeser_haende_l.webp"><img src="img/fake_kaeser_haende_m.webp" alt="Hände beim Käsen"></div>
     <div class="rv">
       <span class="kick">Familie Lindner</span>
-      <h2>In langer Familientradition</h2>
+      <h2>Seit 1998 in Familienhand</h2>
       <p class="intro">Familie Lindner führt die Chäsi Lindenrain in zweiter Generation – mit alten Rezepten und neuen Ideen.</p>
       <div class="shelf">
         <div class="plank"><span class="yr">1998</span><p><b>Frühling:</b> Familie Lindner übernimmt die Dorfkäserei am Lindenrain.</p></div>
         <div class="plank"><span class="yr">2019</span><p><b>Gold</b> für den Bergkäse. Im Herbst öffnet das Lädeli direkt in der Käserei.</p></div>
         <div class="plank"><span class="yr">2022</span><p><b>Bronze</b> für das Kräuter-Mutschli.</p></div>
-        <div class="plank"><span class="yr">Heute</span><p><b>6 Käsespezialitäten</b> und saisonale Sorten – alle aus der eigenen Käserei.</p></div>
+        <div class="plank"><span class="yr">Heute</span><p><b>Sechs Sorten</b> das ganze Jahr, im Winter dazu Fondue- und Raclettekäse.</p></div>
       </div>
     </div>
   </div>
@@ -571,7 +571,7 @@ body:before{background-size:450px 450px}
 <section class="stimmen sec" id="stimmen">
   <div class="wrap">
     <div class="sthead rv">
-      <div><span class="kick">Das sagen unsere Kunden</span><h2>Immer wieder die Fahrt wert</h2></div>
+      <div><span class="kick">Stimmen aus dem Dorf</span><h2>Darum kommen sie wieder</h2></div>
       <div class="score"><b>4,9</b><div><span class="stars">★★★★★</span><small>Musterbewertungen (fiktiv)</small></div></div>
     </div>
     <div class="rail-wrap rv">
@@ -593,8 +593,8 @@ body:before{background-size:450px 450px}
 <section class="laden sec" id="laden">
   <div class="wrap laden-grid">
     <div class="rv">
-      <span class="kick">Öffnungszeiten</span>
-      <h2>Heute offen?</h2>
+      <span class="kick">Lädeli</span>
+      <h2>Wann sind wir da?</h2>
       <div class="status js-status2"></div>
       <div class="days" id="days"></div>
       <div class="dayinfo" id="dayinfo"></div>
@@ -615,8 +615,8 @@ body:before{background-size:450px 450px}
   <picture><source media="(max-aspect-ratio:3/4)" srcset="img/fake_huegel_m.webp"><img src="img/fake_huegel_l.webp" alt="Toggenburger Hügel am Morgen"></picture>
   <div class="wrap">
     <span class="kick" style="color:var(--gold2)">Mitten im Toggenburg</span>
-    <h2>Kommen Sie vorbei – probieren ist erlaubt</h2>
-    <p>Wir freuen uns, Sie in unserem kleinen Chäsilädeli begrüssen zu dürfen.</p>
+    <h2>Besuchen Sie uns am Lindenrain</h2>
+    <p>Im Lädeli dürfen Sie jeden Käse zuerst kosten – ganz ohne Eile.</p>
     <div class="ctas" style="display:flex;flex-wrap:wrap;gap:12px;margin-top:20px"><a class="btn btn-gold" href="tel:+41710000000">Anrufen</a><a class="btn btn-line" href="https://www.google.com/maps/dir/?api=1&destination=47.3627,9.0390" target="_blank" rel="noopener">Route planen</a></div>
   </div>
 </section>
@@ -645,7 +645,7 @@ const barOff=()=>{ if(html.classList.contains('bar-off')) return; html.classList
 const onScroll=()=>{ const y=scrollY; if(y>8) barOff(); hdr.classList.toggle('solid', y>innerHeight*.6); };
 addEventListener('scroll',onScroll,{passive:true}); onScroll();
 
-/* --- Öffnungszeiten (Google, 24.11.2026) --- */
+/* --- Zeiten --- */
 const HOURS={1:[],2:[[480,720],[990,1110]],3:[[480,720],[990,1110]],4:[[480,720],[990,1110]],5:[[480,720],[990,1110]],6:[[480,720]],0:[]};
 const NAMES=['Sonntag','Montag','Dienstag','Mittwoch','Donnerstag','Freitag','Samstag'], SH=['So','Mo','Di','Mi','Do','Fr','Sa'];
 const fmt=m=>Math.floor(m/60)+(m%60?'.'+String(m%60).padStart(2,'0'):'');
@@ -701,7 +701,7 @@ const K=[
  {n:'Lindenrain-Mutschli',s:'Klein, rund und jung – unser Liebling für jeden Tag',t:'jung, mild und schmelzend',tag:'',img:'mutschli',
   herbs:[['Schnittlauch','Rundum in frischem Schnittlauch gewälzt – grün und leicht zwiebelig.'],['Dill','Mit feinem Dill – frisch, etwas süsslich, passt zu Brot und Gurken.'],['Rosa Pfeffer','Rosa Pfefferbeeren geben eine fruchtige, sanfte Schärfe.'],['Blüten','Mit essbaren Blüten – blumig im Duft und ein Hingucker auf jeder Platte.']]},
  {n:'Rahmkäse Alte Mühle',s:'Vollfett, mit Rahm verfeinert',t:'cremig und mild, mit feiner Butternote',tag:'Rahmkäse',img:'rahmkaese'},
- {n:'Roter Pfeffer Käse',s:'Mit ganzen roten Pfefferbeeren',t:'halbhart, mild – mit blumig-scharfen Pfefferbeeren',tag:'mit rotem Pfeffer',img:'pfeffer'},
+ {n:'Pfefferlaib',s:'Mit ganzen roten Pfefferbeeren',t:'halbhart, mild – mit blumig-scharfen Pfefferbeeren',tag:'mit Pfefferbeeren',img:'pfeffer'},
  {n:'Bergkäse würzig',s:'6 Monate im eigenen Keller',t:'kräftig, nussig, mit kleinen Salzkristallen',tag:'★ Gold 2019',img:'bergkaese'},
  {n:'Dunkler Fuchs',s:'Extra reif, über ein Jahr gelagert',t:'tief, würzig und leicht süsslich, zergeht auf der Zunge',tag:'extra reif',img:'fuchs'}
 ];
@@ -736,7 +736,7 @@ function calc(){ Q('#gnum').textContent=n; QA('.fork').forEach((f,i)=>f.classLis
   const w=g=>g>=1000?(g/1000).toLocaleString('de-CH'):g, u=g=>g>=1000?'kg':'g';
   if(mode==='f'){ const g=n*200; Q('#gres').innerHTML=w(g)+' <small>'+u(g)+'</small>'; }
   else { const a=n*200,b=n*250; Q('#gres').innerHTML=w(a)+(u(a)===u(b)?'':' <small>'+u(a)+'</small>')+'–'+w(b)+' <small>'+u(b)+'</small>'; }
-  Q('#gtxt').textContent= mode==='f' ? 'Pro Person rechnet man mit rund 200 g Käse. Unsere hausgemachte Fondue-Mischung gibt es im Laden.' : 'Für Raclette rechnet man mit 200 bis 250 g Käse pro Person. Für grössere Runden am besten vorher anrufen: 071 000 00 00.'; }
+  Q('#gtxt').textContent= mode==='f' ? 'Gerechnet mit etwa 200 g pro Gast. Die fertige Fondue-Mischung bekommen Sie bei uns im Lädeli.' : 'Beim Raclette sind es 200–250 g pro Gast. Grosse Runde geplant? Rufen Sie kurz an: 071 000 00 00.'; }
 Q('#plus').addEventListener('click',()=>{n=Math.min(12,n+1);calc();}); Q('#minus').addEventListener('click',()=>{n=Math.max(1,n-1);calc();});
 QA('.mode button').forEach(b=>b.addEventListener('click',()=>{ mode=b.dataset.m; QA('.mode button').forEach(x=>x.classList.toggle('on',x===b)); Q('#pimgF').classList.toggle('on',mode==='f'); Q('#pimgR').classList.toggle('on',mode==='r'); calc(); }));
 Q('.potimg').addEventListener('click',()=>openLb(mode==='f'?'img/fake_fondue_1x1.webp':'img/fake_raclette_1x1.webp'));

@@ -452,6 +452,13 @@ body:before{background:url(img/fake_kaesetextur.webp) 0 0/720px 380px repeat;opa
 .hero h1{font-size:clamp(40px,4.2vw,66px)}
 .hero-in .wrap>*{max-width:560px}
 .kpic.noimg{display:none}
+.hero .ph img{object-position:72% 100%!important;transform:none!important}
+.hero .ph .whole{position:absolute;inset:0}
+.hero .ph:after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(251,245,232,.93) 0%,rgba(251,245,232,.8) 34%,rgba(251,245,232,0) 62%)}
+.hero .kwire{position:absolute;left:0;right:0;top:0;height:2px;z-index:2;background:linear-gradient(90deg,rgba(255,255,255,0),#fff 15%,#fff 85%,rgba(255,255,255,0));box-shadow:0 0 16px 3px rgba(255,226,160,.9);opacity:0}
+.hdr{color:var(--ink)}.hdr .brand span{color:var(--red)}
+.hero{color:var(--ink);background:var(--milk)}.hero p.lead{color:var(--ink)}.hero .btn-line{color:var(--ink);border-color:var(--ink)}.hero h1 em{color:var(--red)}.hero .kick{color:var(--red)}
+@media (max-aspect-ratio:3/2){.hero .ph:after{background:linear-gradient(180deg,rgba(251,245,232,.95) 0%,rgba(251,245,232,.85) 42%,rgba(251,245,232,0) 66%)}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv,.h-line{opacity:1;transform:none}}
 </style>
 </head>
@@ -469,7 +476,7 @@ body:before{background:url(img/fake_kaesetextur.webp) 0 0/720px 380px repeat;opa
 <main id="top">
 <!-- HERO: Bänkli vor der Käserei -->
 <section class="hero" id="hero">
-  <div class="ph"><picture><source media="(max-aspect-ratio:3/4)" srcset="img/fake_keller_anschnitt_m.webp"><img src="img/fake_keller_anschnitt_l.webp" alt="Angeschnittener Käselaib im Keller"></picture></div>
+  <div class="ph"><picture><source media="(max-aspect-ratio:3/4)" srcset="img/fake_keller_anschnitt_m.webp"><img src="img/fake_keller_anschnitt_l.webp" alt="Angeschnittener Käselaib im Keller"></picture><div class="whole" aria-hidden="true"><picture><source media="(max-aspect-ratio:3/4)" srcset="img/fake_keller_laib_m.webp"><img src="img/fake_keller_laib_l.webp" alt=""></picture></div><i class="kwire" aria-hidden="true"></i></div>
   <div class="shade"></div>
   <div class="hero-in"><div class="wrap">
     <span class="kick h-line">Käserei seit 1998 · Toggenburg</span>
@@ -618,6 +625,11 @@ body:before{background:url(img/fake_kaesetextur.webp) 0 0/720px 380px repeat;opa
 const html=document.documentElement, Q=s=>document.querySelector(s), QA=s=>[...document.querySelectorAll(s)];
 const params=new URLSearchParams(location.search);
 const heroEl=Q('#hero');
+{ const ph=Q('#hero .ph'), whole=ph.querySelector('.whole'), w=ph.querySelector('.kwire');
+  const fin=()=>{whole.style.visibility='hidden'; w.style.opacity=0};
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches) fin(); else setTimeout(()=>{ const t0=performance.now(), D=1500, H=ph.offsetHeight;
+    const st=t=>{ const p=Math.min(1,(t-t0)/D), e=p<.5?2*p*p:1-Math.pow(-2*p+2,2)/2, c='inset('+(e*100)+'% 0 0 0)'; whole.style.clipPath=c; whole.style.webkitClipPath=c; w.style.opacity=p<.97?.9:0; w.style.transform='translateY('+(e*H)+'px)'; if(p<1) requestAnimationFrame(st); else fin(); };
+    requestAnimationFrame(st); },1100); }
 QA('img').forEach(i=>{ const h=()=>{i.style.visibility='hidden'; const w=i.closest('.weg'); if(w) w.classList.add('noimg'); const bx=i.closest('.famimg,.pot'); if(bx&&!bx.querySelector('img:not([style*=hidden])')) bx.style.display='none'}; if(i.complete&&!i.naturalWidth&&i.getAttribute('src')) h(); i.addEventListener('error',h); });
 
 /* --- Entwurf-Leiste (Regel 22) --- */
@@ -681,12 +693,12 @@ QA('.rv').forEach(e=>io.observe(e));
 
 /* --- Käse / Reife-Regler --- */
 const K=[
- {n:'Lindenrain-Mutschli',s:'Klein, rund und jung – unser Liebling für jeden Tag',t:'jung, mild und schmelzend',tag:'',img:'mutschli_kraeuter',
-  herbs:[['Nature','Einfach Milch, Lab und Zeit.'],['Schnittlauch','Frisch gehackter Schnittlauch – grün, leicht zwiebelig, ideal aufs Brot.'],['Paprika','Mildes Paprikapulver gibt Farbe und eine sanft rauchige Note.'],['Chili','Für Mutige: ein Hauch Chili, warm im Abgang.']]},
- {n:'Rahmkäse Alte Mühle',s:'Vollfett, mit Rahm verfeinert',t:'cremig und mild, mit feiner Butternote',tag:'Rahmkäse',img:'magdenauer'},
- {n:'Roter Pfeffer Käse',s:'Mit ganzen roten Pfefferbeeren',t:'halbhart, mild – mit blumig-scharfen Pfefferbeeren',tag:'mit rotem Pfeffer',img:'roter_pfeffer'},
- {n:'Bergkäse würzig',s:'6 Monate im eigenen Keller',t:'kräftig, nussig, mit kleinen Salzkristallen',tag:'★ Gold 2019',img:'appenzeller_stueck'},
- {n:'Dunkler Fuchs',s:'Extra reif, über ein Jahr gelagert',t:'tief, würzig und leicht süsslich, zergeht auf der Zunge',tag:'extra reif',img:'schwarzer_wolf'}
+ {n:'Lindenrain-Mutschli',s:'Klein, rund und jung – unser Liebling für jeden Tag',t:'jung, mild und schmelzend',tag:'',img:'mutschli',
+  herbs:[['Schnittlauch','Rundum in frischem Schnittlauch gewälzt – grün und leicht zwiebelig.'],['Dill','Mit feinem Dill – frisch, etwas süsslich, passt zu Brot und Gurken.'],['Rosa Pfeffer','Rosa Pfefferbeeren geben eine fruchtige, sanfte Schärfe.'],['Blüten','Mit essbaren Blüten – blumig im Duft und ein Hingucker auf jeder Platte.']]},
+ {n:'Rahmkäse Alte Mühle',s:'Vollfett, mit Rahm verfeinert',t:'cremig und mild, mit feiner Butternote',tag:'Rahmkäse',img:'rahmkaese'},
+ {n:'Roter Pfeffer Käse',s:'Mit ganzen roten Pfefferbeeren',t:'halbhart, mild – mit blumig-scharfen Pfefferbeeren',tag:'mit rotem Pfeffer',img:'pfeffer'},
+ {n:'Bergkäse würzig',s:'6 Monate im eigenen Keller',t:'kräftig, nussig, mit kleinen Salzkristallen',tag:'★ Gold 2019',img:'bergkaese'},
+ {n:'Dunkler Fuchs',s:'Extra reif, über ein Jahr gelagert',t:'tief, würzig und leicht süsslich, zergeht auf der Zunge',tag:'extra reif',img:'fuchs'}
 ];
 const kpic=Q('#kpic'), stops=Q('#stops'), harp=Q('#harp'), track=Q('#track'); let cur=-1, herbI=0;
 K.forEach((k,i)=>{ const im=document.createElement('img'); im.src='img/fake_'+k.img+'_k.webp'; im.alt=k.n; im.loading='lazy'; im.addEventListener('error',()=>{im.style.visibility='hidden'; kpic.classList.add('noimg')}); kpic.appendChild(im);

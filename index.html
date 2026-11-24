@@ -445,14 +445,17 @@ body:before{background:url(img/fake_kaesetextur.webp) 0 0/900px 900px repeat;opa
 @media (max-width:380px){.fig .bub{margin-bottom:8px}}
 .pot .potimg{box-shadow:0 12px 26px rgba(74,46,22,.22)!important}
 
-/* Regel 18j: Übergänge ohne Farbsprung – gleiche Käsetextur wie body:before */
-.hero-bar{background:linear-gradient(rgba(251,245,232,.7),rgba(251,245,232,.7)),url(img/fake_kaesetextur.webp) 0 0/900px 900px fixed,var(--milk)!important;backdrop-filter:none;-webkit-backdrop-filter:none}
-.weg:before{content:"";position:absolute;left:0;right:0;top:0;height:34%;z-index:1;pointer-events:none;background:linear-gradient(rgba(251,245,232,.7),rgba(251,245,232,.7)),url(img/fake_kaesetextur.webp) 0 0/900px 900px fixed,var(--milk);-webkit-mask-image:linear-gradient(180deg,#000 0,#000 18%,transparent 100%);mask-image:linear-gradient(180deg,#000 0,#000 18%,transparent 100%)}
-@media (max-width:700px){ /* Telefon: Kachel halb so gross (450px, Datei 1024px = >2x scharf) – mehr Löcher pro Bildschirm, gleiche Stärke */
-body:before{background-size:450px 450px}
-.hero-bar{background:linear-gradient(rgba(251,245,232,.7),rgba(251,245,232,.7)),url(img/fake_kaesetextur.webp) 0 0/450px 450px fixed,var(--milk)!important}
-.weg:before{background-size:auto,450px 450px}
-}
+/* Fon steht (Юля 24.11: «не едет при прокрутке»): EIN Fon-Muster, position:fixed, nirgends background-attachment:fixed (iOS ignoriert es).
+   Hero-Leiste und Weg-Übergang zeigen dasselbe fixierte Muster durch clip-path-Fenster (.ftex > i fixed) – kein Sprung, kein Mitlaufen. */
+:root{--tex:url(img/fake_kaesetextur.webp);--texsz:900px;--texop:.3}
+body:before{background:var(--tex) 0 0/var(--texsz) var(--texsz) repeat!important;opacity:var(--texop)!important;transform:none!important}
+.ftex{position:absolute;inset:0;z-index:0;pointer-events:none;clip-path:inset(0);-webkit-clip-path:inset(0);background:var(--milk)}
+.ftex i{position:fixed;inset:0;display:block;background:var(--tex) 0 0/var(--texsz) var(--texsz) repeat;opacity:var(--texop)}
+.hero-bar{background:transparent!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+.hero-bar>.wrap{position:relative;z-index:1}
+.weg:before{content:none!important}
+.weg .ftex{bottom:auto;height:34%;z-index:1;-webkit-mask-image:linear-gradient(180deg,#000 0,#000 18%,transparent 100%);mask-image:linear-gradient(180deg,#000 0,#000 18%,transparent 100%)}
+@media (max-width:700px){:root{--texsz:450px}}
 .weg:after{background:linear-gradient(180deg,rgba(20,16,11,0) 40%,rgba(20,16,11,.8) 100%)!important}
 .day small{line-height:1.25;text-align:center;display:flex;flex-direction:column;align-items:center}
 .day small span{white-space:nowrap;letter-spacing:-.01em}
@@ -500,7 +503,7 @@ body:before{background-size:450px 450px}
     <p class="lead h-line d2">Familie Lindner macht ihren Käse selbst – vom würzigen Bergkäse bis zur hausgemachten Fondue-Mischung.</p>
     <div class="ctas h-line d3"><a class="btn btn-gold" href="#kaese">Unsere Käse</a><a class="btn btn-line" href="#laden">Zeiten &amp; Anfahrt</a></div>
   </div></div>
-  <div class="hero-bar"><div class="wrap">
+  <div class="hero-bar"><div class="ftex" aria-hidden="true"><i></i></div><div class="wrap">
     <span class="js-status"><span class="dot"></span>…</span>
     <a href="https://maps.google.com/?q=Mosnang" target="_blank" rel="noopener">Lindenrain 1, 9607 Mosnang</a>
     <a href="tel:+41710000000">071 000 00 00</a>
@@ -623,6 +626,7 @@ body:before{background-size:450px 450px}
 
 <!-- WEG -->
 <section class="weg" id="weg">
+  <div class="ftex" aria-hidden="true"><i></i></div>
   <picture><source media="(max-aspect-ratio:3/4)" srcset="img/fake_huegel_m.webp"><img src="img/fake_huegel_l.webp" alt="Abendsonne über dem Toggenburg"></picture>
   <div class="wrap">
     <span class="kick" style="color:var(--gold2)">Mitten im Toggenburg</span>

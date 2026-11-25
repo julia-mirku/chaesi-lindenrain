@@ -511,6 +511,10 @@ body:before{position:absolute!important;inset:0!important;z-index:-1;background:
 @media (hover:none) and (pointer:coarse) and (max-width:1100px){.arr{display:none!important}.rail-wrap{padding:0!important}.dots{display:flex!important}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv,.h-line{opacity:1;transform:none}}
 </style>
+<style id="fake-kaese-fit">/* 25.11: Käsefoto unten nicht abgeschnitten, Block in 1470×659 */
+.kpic{max-height:min(46vh,470px)}.kpic img{object-position:50% 96%}
+#kaese.sec{padding-top:clamp(14px,2vh,40px)!important;padding-bottom:clamp(18px,2.6vh,36px)}
+@media (min-width:1021px){#kaese .head{margin-bottom:10px}#kaese .scale{margin-top:12px}}.pin{width:40px;height:54px}</style>
 </head>
 <body>
 <div class="entwurf" id="entwurf" hidden></div>
@@ -600,7 +604,7 @@ body:before{position:absolute!important;inset:0!important;z-index:-1;background:
     <div class="famimg rv" data-lb="img/fake_kaeser_haende_l.webp"><img src="img/fake_kaeser_haende_m.webp" alt="Hände beim Käsen"></div>
     <div class="rv">
       <span class="kick">Familie Lindner</span>
-      <h2>Seit 1998 in Familienhand</h2>
+      <h2>Ein Familienbetrieb am Lindenrain</h2>
       <p class="intro">Familie Lindner führt die Chäsi Lindenrain in zweiter Generation – mit alten Rezepten und neuen Ideen.</p>
       <div class="shelf">
         <div class="plank"><span class="yr">1998</span><p><b>Frühling:</b> Familie Lindner übernimmt die Dorfkäserei am Lindenrain.</p></div>
@@ -626,7 +630,7 @@ body:before{position:absolute!important;inset:0!important;z-index:-1;background:
         <article class="card"><q>Kleiner Laden, grosse Auswahl. Die Fondue-Mischung ist bei uns jeden Winter gesetzt.</q><div class="who"><b>Peter S.</b><span class="st">★★★★★</span></div></article>
         <article class="card"><q>Sehr herzlich beraten, die Kinder lieben die Mutschli.</q><div class="who"><b>Andrea B.</b><span class="st">★★★★★</span></div></article>
         <article class="card"><q>Für mich jede Woche ein Pflichthalt auf dem Heimweg.</q><div class="who"><b>Reto H.</b><span class="st">★★★★★</span></div></article>
-        <article class="card"><q>Der Dunkle Fuchs ist ein Erlebnis – kräftig, aber nie scharf.</q><div class="who"><b>Sandra W.</b><span class="st">★★★★★</span></div></article>
+        <article class="card"><q>Der Alte Lindenrainer ist ein Erlebnis – kräftig, aber nie scharf.</q><div class="who"><b>Sandra W.</b><span class="st">★★★★★</span></div></article>
       </div>
       <button class="arr r" id="ar" aria-label="Weiter"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M9 5l7 7-7 7"/></svg></button>
       <div class="dots" id="dots"></div>
@@ -649,7 +653,7 @@ body:before{position:absolute!important;inset:0!important;z-index:-1;background:
     </div>
     <div class="mapbox rv">
       <a class="karte" href="https://www.google.com/maps/dir/?api=1&destination=47.3627,9.0390" target="_blank" rel="noopener" aria-label="Route planen"><img src="img/karte_fake.svg" alt="Karte Mosnang (Muster)" loading="lazy">
-        <span class="pin" aria-hidden="true"><svg viewBox="0 0 48 64"><defs><radialGradient id="pinK" cx="38%" cy="30%" r="75%"><stop offset="0" stop-color="#FBDD8A"/><stop offset=".6" stop-color="#F2C766"/><stop offset="1" stop-color="#E3A72F"/></radialGradient><radialGradient id="pinL" cx="40%" cy="35%" r="65%"><stop offset="0" stop-color="#B97F1E"/><stop offset="1" stop-color="#D9A33A"/></radialGradient><radialGradient id="pinD" cx="45%" cy="40%" r="70%"><stop offset="0" stop-color="#1E130A"/><stop offset=".7" stop-color="#3A2412"/><stop offset="1" stop-color="#5A3A1C"/></radialGradient></defs><path d="M24 61C24 61 5 37.5 5 23.5A19 19 0 1 1 43 23.5C43 37.5 24 61 24 61Z" fill="url(#pinK)" stroke="#7A4E25" stroke-width="2.6" stroke-linejoin="round"/><circle cx="24" cy="23" r="7.2" fill="url(#pinD)" stroke="#7A4E25" stroke-width="1.2"/><circle cx="12.5" cy="17" r="2.6" fill="url(#pinL)"/><circle cx="35" cy="14" r="2" fill="url(#pinL)"/><circle cx="35.5" cy="31" r="2.8" fill="url(#pinL)"/><circle cx="15" cy="33" r="1.8" fill="url(#pinL)"/><circle cx="24" cy="44" r="2.1" fill="url(#pinL)"/><circle cx="21" cy="9" r="1.5" fill="url(#pinL)"/></svg></span></a>
+        <span class="pin" aria-hidden="true"><svg viewBox="0 0 40 54"><path d="M20 52C20 52 3.5 32 3.5 19.5A16.5 16.5 0 1 1 36.5 19.5C36.5 32 20 52 20 52Z" fill="#8E2A22" stroke="#5E1A15" stroke-width="1.6" stroke-linejoin="round"/><circle cx="20" cy="19.5" r="10.5" fill="#FBF5E8"/><path d="M13.2 23.6h13.6v-5.2L20 13.4l-6.8 5Z" fill="#7A4E25"/><rect x="18.2" y="19.6" width="3.6" height="4" rx=".6" fill="#FBF5E8"/></svg></span></a>
       <div class="mapcard"><b>Chäsi Lindenrain</b><span>Lindenrain 1 · 9607 Mosnang</span><a class="btn btn-dark" href="https://www.google.com/maps/dir/?api=1&destination=47.3627,9.0390" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l18-8-8 18-2-8-8-2z"/></svg>Route planen</a></div>
     </div>
   </div>
@@ -749,7 +753,7 @@ const K=[
  {n:'Rahmkäse Alte Mühle',s:'Vollfett, mit Rahm verfeinert',t:'cremig und mild, mit feiner Butternote',tag:'Rahmkäse',img:'rahmkaese'},
  {n:'Pfefferlaib',s:'Mit ganzen roten Pfefferbeeren',t:'halbhart, mild – mit blumig-scharfen Pfefferbeeren',tag:'mit Pfefferbeeren',img:'pfeffer'},
  {n:'Bergkäse würzig',s:'6 Monate im eigenen Keller',t:'kräftig, nussig, mit kleinen Salzkristallen',tag:'★ Gold 2019',img:'bergkaese'},
- {n:'Dunkler Fuchs',s:'Extra reif, über ein Jahr gelagert',t:'tief, würzig und leicht süsslich, zergeht auf der Zunge',tag:'extra reif',img:'fuchs'}
+ {n:'Alter Lindenrainer',s:'Extra reif, über ein Jahr gelagert',t:'tief, würzig und leicht süsslich, zergeht auf der Zunge',tag:'extra reif',img:'fuchs'}
 ];
 const kpic=Q('#kpic'), stops=Q('#stops'), harp=Q('#harp'), track=Q('#track'); let cur=-1, herbI=0;
 K.forEach((k,i)=>{ const im=document.createElement('img'); im.src='img/fake_'+k.img+'_k.webp'; im.alt=k.n; im.loading='lazy'; im.addEventListener('error',()=>{im.style.visibility='hidden'; kpic.classList.add('noimg')}); kpic.appendChild(im);
